@@ -13,7 +13,7 @@ describe('Central de Atendimento ao Cliente TAT', function(){
         const longText = 'Teste, teste, teste, teste, teste, teste, teste, teste, teste, teste'
         cy.get('#firstName').type('Bruno')
         cy.get('#lastName').type('Souza')
-        cy.get('#email').type('bruno@teste.com')
+        cy.get('#email').type('bruno@teste@com')
         cy.get('#open-text-area').type(longText, {delay: 0 }) // delay 0 ele copia mais rapido os dados no input
         cy.get('button[type="submit"]').click()
         cy.get('.success').should('be.visible') 
@@ -117,7 +117,7 @@ describe('Central de Atendimento ao Cliente TAT', function(){
     it('exibe mensagem de erro quando o telefone se torna obrigatório mas não é preenchido antes do envio do formulário', function(){
         cy.get('#firstName').type('Bruno')
         cy.get('#lastName').type('Souza')
-        cy.get('#email').type('bruno.teste.com')
+        cy.get('#email').type('bruno@teste.com')
         cy.get('#phone-checkbox').check()         // ao inves do click vamos utilizar o check
         cy.get('#open-text-area').type('teste')
         cy.get('button[type="submit"]').click() 
